@@ -1,4 +1,3 @@
-import java.io.*;
 import java.net.*;
 
 class TestReceiver {
@@ -9,6 +8,7 @@ class TestReceiver {
       DatagramPacket dp = new DatagramPacket(b,0,7);
       ds.receive(dp);
       System.out.println(new String(dp.getData()));
+      ds.close();
     } catch (Exception e) {}
   }
 }

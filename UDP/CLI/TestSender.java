@@ -1,4 +1,3 @@
-import java.io.*;
 import java.net.*;
 
 class TestSender {
@@ -8,6 +7,7 @@ class TestSender {
       DatagramPacket dp = new DatagramPacket("welcome".getBytes(),7,InetAddress.getByName("localhost"),4000);
       ds.send(dp);
       System.out.println("Successfully sent...");
+      ds.close();
     } catch (Exception e) {}
   }
 }
