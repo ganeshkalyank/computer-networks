@@ -3,8 +3,9 @@ import java.net.Socket;
 
 class Client {
     public static void main(String args[]) {
+        Socket s = null;
         try {
-            Socket s = new Socket("localhost",2000);
+            s = new Socket("localhost",2000);
             InputStream in = s.getInputStream();
             byte b[] = new byte[10];
             while (true) {

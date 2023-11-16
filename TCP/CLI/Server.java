@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 class Server {
     public static void main(String args[]) {
+        ServerSocket ss = null;
+        Scanner scan = new Scanner(System.in);
         try {
-            ServerSocket ss = new ServerSocket(2000);
+            ss = new ServerSocket(2000);
             Socket s = ss.accept();
             OutputStream out = s.getOutputStream();
-            Scanner scan = new Scanner(System.in);
             String msg = new String();
             while (true) {
                 System.out.println("Enter message to send: ");
@@ -19,5 +20,6 @@ class Server {
         } catch (Exception e) {
             System.out.println(e);
         }
+        scan.close();
     }
 }
